@@ -13,6 +13,11 @@
       in
       {
         packages = import ./pkgs/default.nix { pkgs = nixpkgs-pkgs; };
+        devShell = nixpkgs-pkgs.mkShell {
+          buildInputs = with nixpkgs-pkgs; [
+            nixpkgs-fmt
+          ];
+        };
       }
     );
 }
