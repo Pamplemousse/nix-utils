@@ -12,7 +12,7 @@
         nixpkgs-pkgs = nixpkgs.legacyPackages.${system};
       in
       {
-        packages = import ./pkgs/default.nix { pkgs = nixpkgs-pkgs; };
+        packages = import ./pkgs/default.nix;
         devShell = nixpkgs-pkgs.mkShell {
           buildInputs = with nixpkgs-pkgs; [
             nixpkgs-fmt
